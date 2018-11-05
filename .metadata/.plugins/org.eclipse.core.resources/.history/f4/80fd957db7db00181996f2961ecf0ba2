@@ -1,0 +1,61 @@
+
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class CalculadoraServlet
+ */
+public class CalculadoraServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CalculadoraServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//System.out.println("doGet:nombre ="+request.getParameter("nombre"));
+		
+		int valor1 = Integer.parseInt(request.getParameter("numero_uno"));
+		int valor2 = Integer.parseInt(request.getParameter("numero_dos"));
+		String operador = request.getParameter("operacion");
+		
+		if ("+".equals(operador)) {
+			int resultado = valor1 + valor2;
+			response.getWriter().append("Resultado: " + resultado);
+		} else if ("-".equals(operador)) {
+			int resultado = valor1 - valor2;
+			response.getWriter().append("Resultado: " + resultado);
+		} else if ("*".equals(operador)) {
+			int resultado = valor1 * valor2;
+			response.getWriter().append("Resultado: " + resultado);
+		} else if ("/".equals(operador)) {
+			int resultado = valor1 / valor2;
+			response.getWriter().append("Resultado: " + resultado);
+		} else if ("r".equals(operador)) {
+			double v1 = (double) valor1;
+			double v2 = (double) valor2;
+			double resultado = (double) Math.pow(v1, 1.0/v2);
+			response.getWriter().append("Resultado: " + resultado);
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

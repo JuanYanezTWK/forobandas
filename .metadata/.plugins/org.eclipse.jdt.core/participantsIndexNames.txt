@@ -1,0 +1,3 @@
+INDEX VERSION 1.130
+C:\Users\BOT Pyke\basedatos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3810475192.index
+\calculadora\src

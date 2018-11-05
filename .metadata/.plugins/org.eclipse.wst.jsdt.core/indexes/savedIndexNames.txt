@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+C:\Users\BOT Pyke\proyecto_bandas\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3021216810.index
